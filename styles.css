@@ -6,6 +6,10 @@
   scroll-behavior: smooth;
 }
 
+:root {
+  --highlight-color: #9400D3;
+}
+
 html, body {
   background-color: #fff;
   color: #000;
@@ -82,7 +86,7 @@ a.btn-link {
 }
 
 button {
-  background-color: darkviolet;
+  background-color: var(--highlight-color);
   color: #fff;
   font-size: 20px;
   font-weight: bold;
@@ -94,7 +98,7 @@ button {
 }
 
 button:hover {
-  background-color: violet;
+  filter: brightness(1.2);
 }
 
 #begin > button {
@@ -162,7 +166,7 @@ h2 {
   height: 332px;
   padding: 16px;
   text-align: center;
-  border: 1px solid darkviolet;
+  border: 1px solid var(--highlight-color);
   border-radius: 8px;
 }
 
@@ -199,14 +203,21 @@ h2 {
   margin-top: 32px;
 }
 
-input[type="email"] {
+input#email {
   box-sizing: content-box;
   margin-bottom: 16px;
   font-size: 20px;
   padding: 8px;
   max-width: 90%;
   width: 300px;
+  outline: none;
+  border: 1px solid var(--highlight-color);
   border-radius: 20px;
+}
+
+input#email:focus,
+input#email:focus-visible {
+  border: 2px solid var(--highlight-color);
 }
 
 footer {
